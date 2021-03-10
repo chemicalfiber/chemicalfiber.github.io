@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="白嫖一时爽一直白嫖一直爽">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次白嫖SSL证书">
+<meta property="og:url" content="http://otkteen.top/2020/bp-ssl/index.html">
+<meta property="og:site_name" content="化学纤维&#39;s blog">
+<meta property="og:description" content="白嫖一时爽一直白嫖一直爽">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0BukD.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0BmTO.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0BEOx.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0BZm6.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0Be0K.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0BMfH.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0BKte.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0Blpd.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0D0UO.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/15/U0B11A.png">
+<meta property="article:published_time" content="2020-07-15T07:20:16.000Z">
+<meta property="article:modified_time" content="2020-07-15T15:19:13.010Z">
+<meta property="article:author" content="化学纤维">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="折腾记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/07/15/U0BukD.png"><title>记一次白嫖SSL证书 | 化学纤维's blog</title><link ref="canonical" href="http://otkteen.top/2020/bp-ssl/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-menu-item__text">关于</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/about/"><span class="header-nav-submenu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-submenu-item__text">关于我</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/log/"><span class="header-nav-submenu-item__icon"><i class="fas fa-book"></i></span><span class="header-nav-submenu-item__text">小站日志</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/music/"><span class="header-nav-submenu-item__icon"><i class="fas fa-music"></i></span><span class="header-nav-submenu-item__text">当季心情</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/friends/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-book"></i></span><span class="header-nav-menu-item__text">友情链接</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">化学纤维's blog</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">记一次白嫖SSL证书</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-15</span></span></div></header><div class="post-body"><blockquote>白嫖一时爽<br/>一直白嫖一直爽</blockquote>
+
+<span id="more"></span>
+<p>前两个月嫖了一台服务器，就在上边弄了个基于One Index的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://share.otkteen.top/" >下载站</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，可惜的是我不想备案<code>（备案是不可能备案的，这辈子是不可能备案的）</code>，就把它弄在了非80端口上，但是每次访问都必须加上端口号…好麻烦…有什么方法可以绕过备案呢？<br>我去问了问，原来只要非80端口就可以免备案，那就走443端口呗。（这里可能有人问我为什么不用Nginx的反向代理隐藏掉端口号，因为我实在是太小白了，之前整过Nginx，但是死活进不去网站，遂放弃）</p>
+
+        <h2 id="总而言之，现在是白嫖Time！"   >
+          <a href="#总而言之，现在是白嫖Time！" class="heading-link"><i class="fas fa-link"></i></a><a href="#总而言之，现在是白嫖Time！" class="headerlink" title="总而言之，现在是白嫖Time！"></a>总而言之，现在是白嫖Time！</h2>
+      <p>要访问443端口而又不加端口号，当然得先整一份SSL证书啦，但是作为一个白嫖王，让我付费是没那么容易的！所以我邀请来了<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://skipm4.com/" >M4</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>帮我忙<del>给我白嫖</del>。</p>
+
+        <h3 id="申请证书"   >
+          <a href="#申请证书" class="heading-link"><i class="fas fa-link"></i></a><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h3>
+      <p>先到<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://freessl.cn/" >freessl.cn</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>注册一个证书。<br>按照<code>红</code>、<code>黄</code>、<code>白</code>箭头的顺序进行操作。<br>先到<code>红</code>箭头处输入你的域名，我想为我的域名<code>otkteen.top</code>申请泛域名SSL（就是说，*.otkteen.top都能行），那我就直接输入<code>otkteen.top</code>即可。<br>然后选择<code>黄</code>箭头处的<code>Let&#39;s Encrypt V2</code>，虽然说TrustAsia的证书有效期一年可以不那么频繁地续期证书，但是TrustAsia只支持双域名，谁能保证你的域名会不会用来开N个网站呢？（<code>Let&#39;s Encrypt</code>有效期三个月别忘了续期，虽然说我在写这篇文章的时候还没有经历过续期这种操作）。<br>最后点击<code>白</code>箭头的<code>创建免费的SSL证书</code>。<br><img src="https://s1.ax1x.com/2020/07/15/U0BukD.png" alt="填写域名和选择证书类型" border="0"></p>
+<p>然后，输入你的常用邮箱（应该是在SSL证书到期之前提醒你续期用的，建议用Outlook邮箱，有条件的上Gmail）。<strong>剩余的选项默认即可。</strong><br>输入邮箱后，点击<code>点击创建</code>。<br><img src="https://s1.ax1x.com/2020/07/15/U0BmTO.png" alt="填写邮箱" border="0"></p>
+<p>然后就会弹出一个安装/调用KeyManager的请求，这是个软件，有Windows版本和Mac版，下载安装即可，我下载的是Mac版。<br><img src="https://s1.ax1x.com/2020/07/15/U0BEOx.jpg" alt="请求调用KeyManager" border="0"><br>第一次启动KeyManager会要求你设置一个密码，这点该注意啥就不用我特别说明了吧～<br><img src="https://s1.ax1x.com/2020/07/15/U0BZm6.jpg" alt="设置密码" border="0"><br>安装完成之后，再回到浏览器里启动KeyManager，然后<font color=red>别动KeyManager</font>，继续回浏览器操作。</p>
+
+        <h3 id="添加TXT记录"   >
+          <a href="#添加TXT记录" class="heading-link"><i class="fas fa-link"></i></a><a href="#添加TXT记录" class="headerlink" title="添加TXT记录"></a>添加TXT记录</h3>
+      <p>为了验证这个域名真的属于你，你要去你的域名解析服务商处添加两条TXT记录，对于想了解TXT记录有啥用的朋友们，可以戳<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/kevin860/p/11216011.html" >这里</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>。<br>等30秒～1分钟，TXT记录生效即可，你可以使用网页上的<code>配置完成，检测一下</code>来进行验证。在确认TXT记录正常后，点击下方蓝色的<code>点击验证</code>进行最终验证。<br><img src="https://s1.ax1x.com/2020/07/15/U0Be0K.jpg" alt="要添加的TXT记录" border="0"></p>
+
+        <h3 id="导出证书"   >
+          <a href="#导出证书" class="heading-link"><i class="fas fa-link"></i></a><a href="#导出证书" class="headerlink" title="导出证书"></a>导出证书</h3>
+      <p>然后它就会跳出这个东西，我们只需点击<code>保存到KeyManager</code>，然后回到KeyManager，可以看到我们的SSL已经证书生成了。<br><img src="https://s1.ax1x.com/2020/07/15/U0BMfH.png" alt="生成的证书信息" border="0"><br>这个时候，点击“更多”、“导出证书”，然后根据你的服务器类型导出相对应的证书格式，我选择<code>不加密私钥</code>。<br><img src="https://s1.ax1x.com/2020/07/15/U0BKte.png" alt="选择操作" border="0"><br><img src="https://s1.ax1x.com/2020/07/15/U0Blpd.png" alt="导出选择" border="0"><br>完成导出之后，KeyManager会在你指定的路径下生成一个指定格式的证书文件。</p>
+
+        <h3 id="部署证书"   >
+          <a href="#部署证书" class="heading-link"><i class="fas fa-link"></i></a><a href="#部署证书" class="headerlink" title="部署证书"></a>部署证书</h3>
+      <p>这点就要看你的信息检索能力了，在不同的服务器上部署SSL证书的操作方式是不一样的！比如说我的是IIS服务器，那我就应该按照IIS安装证书的方式去安装而不是用Nginx或者Apache的方式去安装IIS的证书。<br>（然而身为小白的我选择了宝塔）<br><img src="https://s1.ax1x.com/2020/07/15/U0D0UO.png" alt="我好菜啊" border="0" /></p>
+
+        <h2 id="Done！检查是否生效"   >
+          <a href="#Done！检查是否生效" class="heading-link"><i class="fas fa-link"></i></a><a href="#Done！检查是否生效" class="headerlink" title="Done！检查是否生效"></a>Done！检查是否生效</h2>
+      <p>现在使用<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://share.otkteen.top/" >https://share.otkteen.top</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>是不是可以访问到网站，并且浏览器上标明着“安全的连接”呢？<br>（啊～这令人感到安心的小绿锁～）<br><img src="https://s1.ax1x.com/2020/07/15/U0B11A.png" alt="生效后的图片" border="0"></p>
+
+        <h2 id="新的问题"   >
+          <a href="#新的问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#新的问题" class="headerlink" title="新的问题"></a>新的问题</h2>
+      <p>如果使用<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://share.otkteen.top/" >http://share.otkteen.top</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>去访问的话，依旧是会弹出那该死的「温馨提示」，等我有空再来解决吧。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://otkteen.top">化学纤维</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://otkteen.top/2020/bp-ssl/">http://otkteen.top/2020/bp-ssl/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/Windows/">Windows</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/">折腾记录</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2020/drop-hd/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">我再也不手贱乱来重装系统了</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2020/file-lock-pro/"><span class="paginator-prev__text">File lock Pro-一款文件和文件夹加密工具</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E8%80%8C%E8%A8%80%E4%B9%8B%EF%BC%8C%E7%8E%B0%E5%9C%A8%E6%98%AF%E7%99%BD%E5%AB%96Time%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">
+          总而言之，现在是白嫖Time！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6"><span class="toc-number">1.1.</span> <span class="toc-text">
+          申请证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0TXT%E8%AE%B0%E5%BD%95"><span class="toc-number">1.2.</span> <span class="toc-text">
+          添加TXT记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E8%AF%81%E4%B9%A6"><span class="toc-number">1.3.</span> <span class="toc-text">
+          导出证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E8%AF%81%E4%B9%A6"><span class="toc-number">1.4.</span> <span class="toc-text">
+          部署证书</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Done%EF%BC%81%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E7%94%9F%E6%95%88"><span class="toc-number">2.</span> <span class="toc-text">
+          Done！检查是否生效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">
+          新的问题</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://s2.ax1x.com/2019/09/29/uGAzZ9.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">一名喜欢折腾系统和网站的学生</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://www.youtube.com/channel/UC4zXlY0-5zVHYsRBBgE_woQ" target="_blank" rel="noopener" data-popover="Youtube" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-youtube"></i></span></a><a class="sidebar-ov-social-item" href="https://weibo.com/chemicalfiber" target="_blank" rel="noopener" data-popover="微博" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weibo"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=2461962169" target="_blank" rel="noopener" data-popover="social.QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="mailto:chengfawu6@outlook.com" target="_blank" rel="noopener" data-popover="social.Email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2019~2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>化学纤维</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script>function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: '1khGNJVhFgICknbrNrlKcTVQ-gzGzoHsz',
+    appKey: 'A5zsJpwszT21incfDuEhFi4G',
+    notify: true,
+    verify: true,
+    placeholder: '来水个回复吧～',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: false,
+    recordIP: false,
+    lang: '' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (false) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

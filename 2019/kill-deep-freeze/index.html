@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="今天来和大家讨论一下学校&#x2F;公司&#x2F;其他组织里的电脑“关机后自动还原”的问题。 本文阅读时间大约10分钟，初学者理解时间两小时。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="破解“冰点还原”对电脑的“冻结”状态">
+<meta property="og:url" content="http://otkteen.top/2019/kill-deep-freeze/index.html">
+<meta property="og:site_name" content="化学纤维&#39;s blog">
+<meta property="og:description" content="今天来和大家讨论一下学校&#x2F;公司&#x2F;其他组织里的电脑“关机后自动还原”的问题。 本文阅读时间大约10分钟，初学者理解时间两小时。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://i65.tinypic.com/of53s8.jpg">
+<meta property="og:image" content="http://i68.tinypic.com/5yhsgm.jpg">
+<meta property="og:image" content="http://i66.tinypic.com/2l88ao5.jpg">
+<meta property="og:image" content="http://i68.tinypic.com/i6kqq9.jpg">
+<meta property="og:image" content="http://i65.tinypic.com/29w8s3b.jpg">
+<meta property="og:image" content="http://i66.tinypic.com/izb512.jpg">
+<meta property="og:image" content="http://i68.tinypic.com/29cvz8g.jpg">
+<meta property="og:image" content="http://i63.tinypic.com/1045jfa.jpg">
+<meta property="og:image" content="http://i63.tinypic.com/sm3qy0.jpg">
+<meta property="og:image" content="http://i67.tinypic.com/23vkls5.jpg">
+<meta property="og:image" content="http://i67.tinypic.com/nfo18m.jpg">
+<meta property="og:image" content="http://i66.tinypic.com/2qcqvep.jpg">
+<meta property="og:image" content="http://i66.tinypic.com/33wa7o7.jpg">
+<meta property="og:image" content="http://i66.tinypic.com/n20rjo.jpg">
+<meta property="og:image" content="http://i66.tinypic.com/9fpd1k.jpg">
+<meta property="og:image" content="http://i68.tinypic.com/r2vpz8.jpg">
+<meta property="article:published_time" content="2019-05-17T14:31:03.000Z">
+<meta property="article:modified_time" content="2019-09-28T11:38:34.000Z">
+<meta property="article:author" content="化学纤维">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://i65.tinypic.com/of53s8.jpg"><title>破解“冰点还原”对电脑的“冻结”状态 | 化学纤维's blog</title><link ref="canonical" href="http://otkteen.top/2019/kill-deep-freeze/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-menu-item__text">关于</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/about/"><span class="header-nav-submenu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-submenu-item__text">关于我</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/log/"><span class="header-nav-submenu-item__icon"><i class="fas fa-book"></i></span><span class="header-nav-submenu-item__text">小站日志</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/music/"><span class="header-nav-submenu-item__icon"><i class="fas fa-music"></i></span><span class="header-nav-submenu-item__text">当季心情</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/friends/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-book"></i></span><span class="header-nav-menu-item__text">友情链接</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">化学纤维's blog</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">破解“冰点还原”对电脑的“冻结”状态</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2019-05-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2019-09-28</span></span></div></header><div class="post-body"><p>今天来和大家讨论一下学校/公司/其他组织里的电脑“关机后自动还原”的问题。</p>
+<p>本文阅读时间大约10分钟，初学者理解时间两小时。</p>
+<span id="more"></span>
+
+<p><font color=red size=6>操作有风险，动手须三思！</font><br></br><br><font color=red size=6>操作有风险，动手须三思！</font><br></br><br><font color=red size=6>操作有风险，动手须三思！</font></p>
+<p>相信大家对“关机自动还原”这种设定深恶痛绝，虽然如果我们一不小心被电脑小白修改了系统里的什么东西引发系统崩溃时可以重启还原更改，但是如果我们真的要装点什么真的要长期使用的软件，但是一重启又没了的时候，那个时候内心简直就只有一句f**k you。所以，今天就来教教大家怎么搞定这个问题。</p>
+<p>“关机重启自动还原”一般有两种办法可以做到，一种是安装硬盘保护卡，这是硬件保护，我……不会搞（冷静冷静别打我）；一种是软件保护，利用“影子系统”“冰点还原”之类的软件来还原系统。而大部分组织用的就是“冰点还原”。</p>
+
+        <h2 id="思路"   >
+          <a href="#思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#思路" class="headerlink" title="思路"></a>思路</h2>
+      <p>有两种方式去除“冰点还原”：</p>
+<p>一种是直接暴力重装系统，干净利落，缺点是你以前系统上的东西全没了。</p>
+<p>一种是替换文件进行卸载，可以保留以前系统上的所有东西，缺点就是比较麻烦。</p>
+<p>“冰点还原”是依赖一个叫做 Persi0.sys的关键文件来工作的，我们只要换掉这个文件就可以“破解”冰点还原了。</p>
+
+        <h2 id="开始动手！"   >
+          <a href="#开始动手！" class="heading-link"><i class="fas fa-link"></i></a><a href="#开始动手！" class="headerlink" title="开始动手！"></a>开始动手！</h2>
+      <p>下面是步骤：</p>
+
+        <h3 id="1、投机取巧阶段"   >
+          <a href="#1、投机取巧阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、投机取巧阶段" class="headerlink" title="1、投机取巧阶段"></a>1、投机取巧阶段</h3>
+      <p>使用个人经验去猜冰点还原的管理者密码。试试看？如果试成功了，后边的步骤就不用看了。</p>
+<p>按下键盘Ctrl+shift+alt+F6调出冰点还原密码输入面板，输入密码试试看，如果输入后点击“确定”弹出来一个窗口，只需选择“重启后解冻”，然后应用并重启就OK了，不用往下看了；如果输入密码后点击“确定”无反应，证明密码错误，那就继续往下看。</p>
+
+        <h3 id="2、着手破解"   >
+          <a href="#2、着手破解" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、着手破解" class="headerlink" title="2、着手破解"></a>2、着手破解</h3>
+      <p>2（1）准备阶段</p>
+<p>准备材料：</p>
+<p>U盘一个（最好是空的或者是尽量少资料，因为等下要格式化），</p>
+<p>Win PE安装包一个（需要带有NVME固态硬盘驱动，推荐微PE或者是无垠PE，纯新手推荐微PE），<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.wepe.com.cn/download.html" >http://www.wepe.com.cn/download.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>与被“冻结”电脑同版本的冰点还原安装包一个：<br>链接：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://pan.baidu.com/s/1fHa-dwHY16qBUjOHHNnt9Q" >https://pan.baidu.com/s/1fHa-dwHY16qBUjOHHNnt9Q</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>   提取码：ktx0<br>虚拟机软件（非必须，如果不想准备麻烦的虚拟机，请上网寻找现成的对应版本Persi0.sys关键文件）推荐VMware虚拟机</p>
+<p>Windows系统安装包一个，下载地址是 msdn.itellyou.cn/ ，注意要和你被“冻结”的电脑系统版本一致，比如被“冻结”的电脑是Windows 7专业版，那么你下载的也要是Windows 7专业版。</p>
+<p>要用迅雷下载哦！</p>
+<p>2（2）给自己留后路，以防破解失败</p>
+<p>既然冰点还原使系统处于“冻结”状态，我们肯定不能和它正面硬杠，那么怎么办呢？答案就是用另一个系统。这就是为什么需要准备一个U盘的原因。</p>
+<p>这里以微PE为例子</p>
+<p>下载PE安装包后，将U盘插入电脑，如果U盘内有资料的，先复制U盘内资料到电脑里。</p>
+<p>打开微PE安装程序，选择窗口右下角的U盘图标，点击安装，程序开始格式化U盘并写入PE系统到你的U盘里。</p>
+<p>完成之后，记得将U盘原来的数据复制回U盘里！复制完之后，你会发现，U盘比原来少了500M左右，“我的电脑”里可能会多一个分区（Windows10才会显示）这是正常现象，因为500M空间就是分给了PE，而多出来的分区也是属于你的U盘的，只不过这个本应该隐藏的分区被显示出来了。</p>
+<p>准备好PE之后，先百度一下你的电脑的U盘启动快捷键，联想电脑貌似是F12。知道是哪个按键后，重启电脑，然后按住U盘启动快捷键不放，在弹出的界面，选择你的U盘（一般是带有USB字样的），等待开机。</p>
+<p>现在进入到PE，选择CGI备份还原，选择“备份分区”，然后到最后一个选项卡“高级”，将调整到“最高压缩”，再回到第一个选项卡“操作分区”，点击执行，选择“完成后重启”。<br><fancybox><br><a href="http://tinypic.com?ref=of53s8" target="_blank"><img src="http://i65.tinypic.com/of53s8.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br><a href="http://tinypic.com?ref=5yhsgm" target="_blank"><img src="http://i68.tinypic.com/5yhsgm.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br></fancybox></p>
+
+        <h3 id="3、让我们开始吧！"   >
+          <a href="#3、让我们开始吧！" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、让我们开始吧！" class="headerlink" title="3、让我们开始吧！"></a>3、让我们开始吧！</h3>
+      <p>3（1）安装虚拟机</p>
+<p>这里以VMware虚拟机为例子，安装虚拟机并输入注册码。</p>
+<p>建立虚拟机<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/9c69d48fe6fcce13c8024e6c.html" >https://jingyan.baidu.com/article/9c69d48fe6fcce13c8024e6c.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>3（2）安装虚拟机内系统</p>
+<p>启动微PE安装程序，点击右下角光盘图标，点击“生成ISO”，把ISO文件放到被“冻结”的电脑除了C盘以外的地方。<br><fancybox><br><a href="http://tinypic.com?ref=2l88ao5" target="_blank"><img src="http://i66.tinypic.com/2l88ao5.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br><a href="http://tinypic.com?ref=i6kqq9" target="_blank"><img src="http://i68.tinypic.com/i6kqq9.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br></fancybox></p>
+<p>打开虚拟机软件，找到你刚刚创建的虚拟机，按下顶端菜单栏的“启动电源进入时固件”。<br><a href="http://tinypic.com?ref=29w8s3b" target="_blank"><img src="http://i65.tinypic.com/29w8s3b.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br>按键盘上的右方向键（→）转到 boot，使用键盘上的“+”按钮调整CD-ROM到第一位，按F10保存退出。<br><a href="http://tinypic.com?ref=izb512" target="_blank"><img src="http://i66.tinypic.com/izb512.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br>关闭虚拟机电源。</p>
+<p>在左侧硬件调整处，找到CD-ROM。点击“使用ISO映像文件”，选择从MSDN下载的Windows7安装包，也是个ISO文件，注意格式。选择后保存退出。<br><fancybox><br><a href="http://tinypic.com?ref=29cvz8g" target="_blank"><img src="http://i68.tinypic.com/29cvz8g.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br><a href="http://tinypic.com?ref=1045jfa" target="_blank"><img src="http://i63.tinypic.com/1045jfa.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br></fancybox><br>启动虚拟机电源。虚拟机会自动启动Windows7安装程序，按照指示完成安装，应该不需要太久，半小时应该可以完成了。</p>
+<p>3（3）配置“冰点还原”</p>
+<p>在虚拟机内安装“冰点还原”，并设置你的还原密码。我一般是设置1234作为密码。<br><a href="http://tinypic.com?ref=sm3qy0" target="_blank"><img src="http://i63.tinypic.com/sm3qy0.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br>完成后，虚拟机会自动重启。</p>
+<p>重启后，你的虚拟机就会处于“冻结”状态。这时关闭虚拟机电源。</p>
+<p>3（4）替换文件</p>
+<p>在左侧硬件调整处，找到CD-ROM。点击“使用ISO映像文件”，选择你PE系统的ISO文件，然后保存设置。<br><a href="http://tinypic.com?ref=23vkls5" target="_blank"><img src="http://i67.tinypic.com/23vkls5.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br>启动虚拟机。点击顶部菜单栏的“虚拟机”-“可移动设备”-找到你的U盘-“连接（断开与主机的连接）”。<br><a href="http://tinypic.com?ref=nfo18m" target="_blank"><img src="http://i67.tinypic.com/nfo18m.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br>在“此电脑”的C盘根目录下找到Persi0.sys文件，复制到你的U盘中。（或者在此文章底部找到适用于特定版本的Persi0.sys文件）<br><a href="http://tinypic.com?ref=2qcqvep" target="_blank"><img src="http://i66.tinypic.com/2qcqvep.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br>关闭虚拟机。你的U盘会自动连接到你的主机。这时候可以“安全移除”你的U盘。</p>
+<p>将你的U盘插入被“冻结”的电脑，重启。</p>
+<p>按下U盘启动按键（联想是F12），选择你的U盘，进入PE。在“此电脑”的C盘根目录下找到Persi0.sys文件，复制到你的U盘的另一个位置中。然后把从虚拟机里获取到的Persi0.sys文件复制到C盘根目录冰替换掉它，拔掉U盘重启。<br><a href="http://tinypic.com?ref=33wa7o7" target="_blank"><img src="http://i66.tinypic.com/33wa7o7.jpg" border="0" alt="Image and video hosting by TinyPic"></a></p>
+<h2>4 验证是否成功</h2>
+
+<p>4（1）成功开机</p>
+<p>4（1）①成功开机后，按下Ctrl+shift+alt+F6调出冰点还原密码输入面板，输入你之前在虚拟机里设置的冰点还原的密码（我的是1234），按下“确定”。</p>
+<p>4（1）②选择“重启后解冻”，然后应用并重启。<br><a href="http://tinypic.com?ref=n20rjo" target="_blank"><img src="http://i66.tinypic.com/n20rjo.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br>4（1）③运行“冰点还原”安装包，执行卸载“冰点还原”程序。<br><fancybox><br><a href="http://tinypic.com?ref=9fpd1k" target="_blank"><img src="http://i66.tinypic.com/9fpd1k.jpg" border="0" alt="Image and video hosting by TinyPic"></a><br><a href="http://tinypic.com?ref=r2vpz8" target="_blank"><img src="http://i68.tinypic.com/r2vpz8.jpg" border="0" alt="Image and video hosting by TinyPic"></a></p>
+</fancybox>
+
+<p>再见，呸！再也不见，冰点还原。</p>
+<p>4（2）未成功开机</p>
+<p>将你的U盘插入被“冻结”的电脑，重启。</p>
+<p>按下U盘启动按键（联想是F12），选择你的U盘，进入PE。</p>
+<p>双击“CGI备份还原”，选择你之前在“步骤2（2）”备份的镜像，一般在D:\RESC\SYSTEM.GHO。选好后按下“确定”，等待还原，还原后重新执行“步骤3（4）”。成功开机后，执行“步骤4（1）”。</p>
+<p>去你大爷的冰点还原。</p>
+<p>相关资料：</p>
+<p>现成的Persi0.sys（仅仅适用于7.51.020.4170版本）：<br>链接：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://pan.baidu.com/s/1fHa-dwHY16qBUjOHHNnt9Q" >https://pan.baidu.com/s/1fHa-dwHY16qBUjOHHNnt9Q</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 提取码：ktx0</p>
+<p>后期注意事项：</p>
+<p>1、“解冻”后，系统不受保护，注意不要乱来下载东西了。</p>
+<p>2、若要把Windows7更新至Windows10，记得卸载“冰点还原”，否则安装程序会显示“不兼容”。</p>
+<p>3、文中提到的“另一个系统”有人曾经提出可以装在D盘上，当然可以，但是如果这样做就会格式化你的D盘，也就是“另一个系统”的安装位置。得不偿失，一个USB 3.0的U盘在京东才3、40。</p>
+<p>4、版权所有，转载须经作者同意。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://otkteen.top">化学纤维</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://otkteen.top/2019/kill-deep-freeze/">http://otkteen.top/2019/kill-deep-freeze/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/Windows/">Windows</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E6%95%99%E7%A8%8B/">教程</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2019/kiwi/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">分享一款可以安装插件的手机浏览器</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2019/mimikkotheme/"><span class="paginator-prev__text">兽耳科技主题</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">
+          思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%8A%A8%E6%89%8B%EF%BC%81"><span class="toc-number">2.</span> <span class="toc-text">
+          开始动手！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%8A%95%E6%9C%BA%E5%8F%96%E5%B7%A7%E9%98%B6%E6%AE%B5"><span class="toc-number">2.1.</span> <span class="toc-text">
+          1、投机取巧阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E7%9D%80%E6%89%8B%E7%A0%B4%E8%A7%A3"><span class="toc-number">2.2.</span> <span class="toc-text">
+          2、着手破解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E8%AE%A9%E6%88%91%E4%BB%AC%E5%BC%80%E5%A7%8B%E5%90%A7%EF%BC%81"><span class="toc-number">2.3.</span> <span class="toc-text">
+          3、让我们开始吧！</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">4 验证是否成功</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://s2.ax1x.com/2019/09/29/uGAzZ9.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">一名喜欢折腾系统和网站的学生</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://www.youtube.com/channel/UC4zXlY0-5zVHYsRBBgE_woQ" target="_blank" rel="noopener" data-popover="Youtube" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-youtube"></i></span></a><a class="sidebar-ov-social-item" href="https://weibo.com/chemicalfiber" target="_blank" rel="noopener" data-popover="微博" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weibo"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=2461962169" target="_blank" rel="noopener" data-popover="social.QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="mailto:chengfawu6@outlook.com" target="_blank" rel="noopener" data-popover="social.Email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2019~2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>化学纤维</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script>function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: '1khGNJVhFgICknbrNrlKcTVQ-gzGzoHsz',
+    appKey: 'A5zsJpwszT21incfDuEhFi4G',
+    notify: true,
+    verify: true,
+    placeholder: '来水个回复吧～',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: false,
+    recordIP: false,
+    lang: '' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (false) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

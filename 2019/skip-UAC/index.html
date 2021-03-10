@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="打开一些软件时弹出的UAC授权提示窗口让你觉得很烦？除了关闭UAC，还能……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="绕行UAC方法 1">
+<meta property="og:url" content="http://otkteen.top/2019/skip-UAC/index.html">
+<meta property="og:site_name" content="化学纤维&#39;s blog">
+<meta property="og:description" content="打开一些软件时弹出的UAC授权提示窗口让你觉得很烦？除了关闭UAC，还能……">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/29/uGEAMD.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/29/uGEeZd.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/29/uGEVqH.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/29/uGEEse.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/29/uGEFxO.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/29/uGEmdA.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/29/uGEnII.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/29/uGEKit.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/29/uGEMJP.jpg">
+<meta property="article:published_time" content="2019-09-29T15:09:58.000Z">
+<meta property="article:modified_time" content="2019-10-23T10:28:10.000Z">
+<meta property="article:author" content="化学纤维">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/09/29/uGEAMD.jpg"><title>绕行UAC方法 1 | 化学纤维's blog</title><link ref="canonical" href="http://otkteen.top/2019/skip-UAC/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-menu-item__text">关于</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/about/"><span class="header-nav-submenu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-submenu-item__text">关于我</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/log/"><span class="header-nav-submenu-item__icon"><i class="fas fa-book"></i></span><span class="header-nav-submenu-item__text">小站日志</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/music/"><span class="header-nav-submenu-item__icon"><i class="fas fa-music"></i></span><span class="header-nav-submenu-item__text">当季心情</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/friends/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-book"></i></span><span class="header-nav-menu-item__text">友情链接</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">化学纤维's blog</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">绕行UAC方法 1</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2019-09-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2019-10-23</span></span></div></header><div class="post-body"><p>打开一些软件时弹出的UAC授权提示窗口让你觉得很烦？除了关闭UAC，还能……</p>
+<span id="more"></span> <!-- 我是注释，你们看不到 -->
+
+
+        <h2 id="文字教程"   >
+          <a href="#文字教程" class="heading-link"><i class="fas fa-link"></i></a><a href="#文字教程" class="headerlink" title="文字教程"></a>文字教程</h2>
+      <p>本方法介绍如何让电脑主动绕过UAC启动软件。</p>
+
+        <h2 id="优缺点"   >
+          <a href="#优缺点" class="heading-link"><i class="fas fa-link"></i></a><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2>
+      <p>优点：</p>
+<ul>
+<li>操作简单</li>
+<li>小白易懂</li>
+<li>不需要额外配置软件</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>开机启动</li>
+<li>添加过多任务可能会拖慢电脑启动速度</li>
+<li>添加过多任务可能会影响电脑性能</li>
+</ul>
+
+        <h2 id="动手！"   >
+          <a href="#动手！" class="heading-link"><i class="fas fa-link"></i></a><a href="#动手！" class="headerlink" title="动手！"></a>动手！</h2>
+      <p>首先登录能进行UAC授权的账户，就是隶属于用户组“Administrator”组的用户帐户，例如Windows内置管理员帐户Administrator。<br>登录用户帐户后，右键点击“计算机”(Windows 8/8.1是“这台电脑”)(Windows 10是“此电脑”)，选择“管理”。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/uGEAMD"><img src="https://s2.ax1x.com/2019/09/29/uGEAMD.jpg" alt="uGEAMD.jpg" border="0" /></a><br>在打开的窗口左侧找到“任务计划程序”，点击它。<br>点击右侧的“创建任务”，打开任务建立选项窗口。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/uGEeZd"><img src="https://s2.ax1x.com/2019/09/29/uGEeZd.jpg" alt="uGEeZd.jpg" border="0" /></a><br>在“常规”选项卡对此任务命名(养成良好的命名习惯方便日后管理)并勾选“使用最高权限运行”(这个是关键操作！)。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/uGEVqH"><img src="https://s2.ax1x.com/2019/09/29/uGEVqH.jpg" alt="uGEVqH.jpg" border="0" /></a><br>转到“触发器”选项卡，点击“新建”。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/uGEEse"><img src="https://s2.ax1x.com/2019/09/29/uGEEse.jpg" alt="uGEEse.jpg" border="0" /></a><br>把上方的“开始任务”选项从“制定计划时”改为“登录时”。<br>点击“确定”。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/uGEFxO"><img src="https://s2.ax1x.com/2019/09/29/uGEFxO.jpg" alt="uGEFxO.jpg" border="0" /></a><br>转到“操作”选项卡，点击“新建”。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/uGEmdA"><img src="https://s2.ax1x.com/2019/09/29/uGEmdA.jpg" alt="uGEmdA.jpg" border="0" /></a><br>直接在弹出的窗口指定你要绕过UAC的程序路径。<br>点击“确定”。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/uGEnII"><img src="https://s2.ax1x.com/2019/09/29/uGEnII.jpg" alt="uGEnII.jpg" border="0" /></a><br>转到“条件”选项卡，取消勾选“只有在计算机使用交流电源时才启动此任务”。<br>完成后点击“确定”。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/uGEKit"><img src="https://s2.ax1x.com/2019/09/29/uGEKit.jpg" alt="uGEKit.jpg" border="0" /></a><br>现在我们点击左侧窗口的“计划程序库”，可以看到里边已经建立好了你的任务。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/uGEMJP"><img src="https://s2.ax1x.com/2019/09/29/uGEMJP.jpg" alt="uGEMJP.jpg" border="0" /></a><br>此时，注销后重新登录或者重启电脑试试看？</p>
+
+        <h2 id="看了文字也不懂？那就看视频吧！"   >
+          <a href="#看了文字也不懂？那就看视频吧！" class="heading-link"><i class="fas fa-link"></i></a><a href="#看了文字也不懂？那就看视频吧！" class="headerlink" title="看了文字也不懂？那就看视频吧！"></a>看了文字也不懂？那就看视频吧！</h2>
+      <p>B站视频教程地址：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/av51898603/" >https://www.bilibili.com/video/av51898603/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>YouTube视频教程地址：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://youtu.be/AeMSJNEt2sk" >https://youtu.be/AeMSJNEt2sk</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://otkteen.top">化学纤维</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://otkteen.top/2019/skip-UAC/">http://otkteen.top/2019/skip-UAC/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/Windows/">Windows</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E6%95%99%E7%A8%8B/">教程</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2019/Mounty%20NTFS/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">免费的MacOS NTFS磁盘挂载工具：Mounty for NTFS</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2019/tinypic-dead/"><span class="paginator-prev__text">图床TinyPic死亡</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">
+          文字教程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">
+          优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%89%8B%EF%BC%81"><span class="toc-number">3.</span> <span class="toc-text">
+          动手！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E4%BA%86%E6%96%87%E5%AD%97%E4%B9%9F%E4%B8%8D%E6%87%82%EF%BC%9F%E9%82%A3%E5%B0%B1%E7%9C%8B%E8%A7%86%E9%A2%91%E5%90%A7%EF%BC%81"><span class="toc-number">4.</span> <span class="toc-text">
+          看了文字也不懂？那就看视频吧！</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://s2.ax1x.com/2019/09/29/uGAzZ9.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">一名喜欢折腾系统和网站的学生</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://www.youtube.com/channel/UC4zXlY0-5zVHYsRBBgE_woQ" target="_blank" rel="noopener" data-popover="Youtube" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-youtube"></i></span></a><a class="sidebar-ov-social-item" href="https://weibo.com/chemicalfiber" target="_blank" rel="noopener" data-popover="微博" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weibo"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=2461962169" target="_blank" rel="noopener" data-popover="social.QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="mailto:chengfawu6@outlook.com" target="_blank" rel="noopener" data-popover="social.Email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2019~2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>化学纤维</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script>function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: '1khGNJVhFgICknbrNrlKcTVQ-gzGzoHsz',
+    appKey: 'A5zsJpwszT21incfDuEhFi4G',
+    notify: true,
+    verify: true,
+    placeholder: '来水个回复吧～',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: false,
+    recordIP: false,
+    lang: '' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (false) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

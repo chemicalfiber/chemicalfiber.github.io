@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Well，MacOS原生默认不支持NTFS文件系统的磁盘读写，今天分享一款软件给大家，让你的Mac设备开启NTFS读写功能！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="免费的MacOS NTFS磁盘挂载工具：Mounty for NTFS">
+<meta property="og:url" content="http://otkteen.top/2019/Mounty%20NTFS/index.html">
+<meta property="og:site_name" content="化学纤维&#39;s blog">
+<meta property="og:description" content="Well，MacOS原生默认不支持NTFS文件系统的磁盘读写，今天分享一款软件给大家，让你的Mac设备开启NTFS读写功能！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://photocdn.sohu.com/20151102/mp39162459_1446432086835_19.gif">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/19/KnUYNt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/19/KnUU9f.png">
+<meta property="article:published_time" content="2019-10-19T15:09:58.000Z">
+<meta property="article:modified_time" content="2021-03-10T04:53:20.356Z">
+<meta property="article:author" content="化学纤维">
+<meta property="article:tag" content="Mac">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="软件分享">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://photocdn.sohu.com/20151102/mp39162459_1446432086835_19.gif"><title>免费的MacOS NTFS磁盘挂载工具：Mounty for NTFS | 化学纤维's blog</title><link ref="canonical" href="http://otkteen.top/2019/Mounty%20NTFS/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-menu-item__text">关于</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/about/"><span class="header-nav-submenu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-submenu-item__text">关于我</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/log/"><span class="header-nav-submenu-item__icon"><i class="fas fa-book"></i></span><span class="header-nav-submenu-item__text">小站日志</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/music/"><span class="header-nav-submenu-item__icon"><i class="fas fa-music"></i></span><span class="header-nav-submenu-item__text">当季心情</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/friends/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-book"></i></span><span class="header-nav-menu-item__text">友情链接</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner" style="background: url(https://s1.ax1x.com/2020/05/09/YQ92nJ.jpg) no-repeat center/cover;"><div class="header-banner-info"><div class="header-banner-info__title">化学纤维's blog</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">免费的MacOS NTFS磁盘挂载工具：Mounty for NTFS</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2019-10-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-03-10</span></span></div></header><div class="post-body"><p>Well，MacOS原生默认不支持NTFS文件系统的磁盘读写，今天分享一款软件给大家，让你的Mac设备开启NTFS读写功能！</p>
+<span id="more"></span> <!-- 我是注释，你们看不到 -->
+
+
+<p>这里是<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://space.bilibili.com/12944779" >化学纤维</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>！一位喜欢折腾电脑和手机操作系统的机友！</p>
+<p>我们知道，NTFS因为没有FAT32文件系统4G单文件最大限制和比exFAT更好的稳定性而拥有较大的普及率。<br>但是成功吃上了黑苹果，或者是正在使用Mac设备的朋友们却发现一件非常蛋疼的事情：Mac默认不支持NTFS文件系统的写入，只支持读取。我们安装或者购买Mac，大多数是为了办公用途，而办公过程中免不了用到U盘等储存介质进行文件的交换，但是如果你的同事或朋友给你的U盘是NTFS文件系统的话……<br><img src="http://photocdn.sohu.com/20151102/mp39162459_1446432086835_19.gif"></p>
+
+        <h2 id="Mac设备如何开启NTFS读写？"   >
+          <a href="#Mac设备如何开启NTFS读写？" class="heading-link"><i class="fas fa-link"></i></a><a href="#Mac设备如何开启NTFS读写？" class="headerlink" title="Mac设备如何开启NTFS读写？"></a>Mac设备如何开启NTFS读写？</h2>
+      <p>虽然说MacOS原生是支持开启NTFS的，但是一大堆的命令已经让小白望而却步。有没有一些挂载工具呢？<font color=Red>有啊！先交钱！</font></p>
+<p>百度搜索“<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=84053098_3_dg&wd=Mac%20NTFS&oq=Mac%2520NTFS&rsv_pq=fe4dc94c000597d1&rsv_t=741f0zcU5MgNgflMhcVWkCZgVGxEubiLGIt9w3Qr6mgLM7C9lwfYeDM480qNcnuoWP5hXw&rqlang=cn&rsv_enter=0&rsv_dl=tb&rsv_sug3=2&rsv_sug1=2&rsv_sug7=100&rsv_sug4=1495" >Mac NTFS</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>”关键词，得出的第一个软件Paragon NTFS for Mac：¥149。呵呵，怎么不再提高100元再弄个1元加购赠品凑满250？</p>
+<p>便宜点的，有Tuxera NTFS for Mac：¥99。WDNMD我还不如再Mac里弄个Windows虚拟机，Oracle VM VirtualBox虽然麻烦点，但是免费还能保证数据安全。<br>破解版？不存在的！<br>仔细一看，这两家软件的代理都是那臭名昭著的业界毒瘤：思杰马克丁，对，你花钱还不一定买得到正版的那家软件代理商。当你试图在你访问得到的网站上下载所谓的“破解版”的时候，请留意一下浏览器地址栏，当你点击“下载”按钮的时候，地址栏是不是显示了以 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://wm.makeding.com/" >http://wm.makeding.com</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 作为开头的网址？恭喜，你下载到的就是个“试用版”，永远无法破解。<br>而且大家还可以去看看这俩软件的《售后服务条款》，简直就是花钱找shi吃。</p>
+
+        <h3 id="难道我们穷人就没有人权？"   >
+          <a href="#难道我们穷人就没有人权？" class="heading-link"><i class="fas fa-link"></i></a><a href="#难道我们穷人就没有人权？" class="headerlink" title="难道我们穷人就没有人权？"></a>难道我们穷人就没有人权？</h3>
+      <p>有开发者站出来了！<br>今天为大家推荐一款比Paragon NTFS for Mac和Tuxera NTFS for Mac更好的NTFS磁盘读写挂载工具。<br>最重要的是！它是免费的！<br>它的名字是：</p>
+
+        <h2 id="Mounty-for-NTFS"   >
+          <a href="#Mounty-for-NTFS" class="heading-link"><i class="fas fa-link"></i></a><a href="#Mounty-for-NTFS" class="headerlink" title="Mounty for NTFS"></a>Mounty for NTFS</h2>
+      <p>我们来看看它<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mounty.app/" >官网</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>上的描述：</p>
+<blockquote>
+<p>Mounty for NTFS comes without any decorations.<br>No additional driver will be installed. It simply makes use of the build-in mechanisms already provided by Mac OSX Mavericks - no strings attached.</p>
+</blockquote>
+<p>翻译过来就是（由Google翻译，化学纤维润色）：</p>
+<blockquote>
+<p>Mounty for NTFS没有任何花里胡哨的内容。<br>它不会安装其他驱动程序。它只是利用了Mac OSX Mavericks（10.9）已经提供的内置机制-不附加任何字符串。</p>
+</blockquote>
+<p>舒服了，免费，微小（3.9MB）的安装包，软件界面语言高度本地化（我的是繁体中文，所以Mounty for NTFS的语言界面跟随了系统语言）。<br><img src="https://s2.ax1x.com/2019/10/19/KnUYNt.png" alt="KnUYNt.png" border="0" /><br>不过可能是因为“小”的原因，安装引导界面也是标准的Finder界面。只有Mounty for NTFS本体，“应用程序”快捷方式和Read Me First.md文档（这是个更新日志文档，内容全英文，就不用看了）。不过我是非常喜欢这种“极简”风格的。</p>
+
+        <h2 id="如何使用Mounty-for-NTFS？"   >
+          <a href="#如何使用Mounty-for-NTFS？" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何使用Mounty-for-NTFS？" class="headerlink" title="如何使用Mounty for NTFS？"></a>如何使用Mounty for NTFS？</h2>
+      <p>根据安装镜像里的使用指引，它只要把Mounty for NTFS本体拖动到“应用程序”目录（Applications），即可使用。打开Mounty for NTFS之后你可以在屏幕顶端的菜单列表看到一个山脉图标，就长这样。<br><img src="https://s2.ax1x.com/2019/10/19/KnUU9f.png" alt="KnUU9f.png" border="0" /><br>点击它，就可以对目前已经连接的NTFS磁盘进行读/写挂载操作了。<br>当然，如果你希望它可以开机自动挂载你的NTFS本地磁盘，你可以勾选上“开机自启”的选项（简体中文的版本我没用过，不过这个选项就在这个位置），并且选择你的NTFS硬盘分区为“自动挂载”。下次开机进入MacOS之后，选择的分区会自动挂载并且在Finder中打开。</p>
+
+        <h2 id="注意事项"   >
+          <a href="#注意事项" class="heading-link"><i class="fas fa-link"></i></a><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2>
+      <p>被挂载的NTFS分区将在Finder窗口左侧的“位置”列表中消失，你可以在“终端”输入以下命令，在桌面建立一个名为Volumes的快捷方式，用于显示所有驱动器。<br>sudo ln -s /Volumes ~/Desktop/Volumes<br>输入上述代码后，后记得输入系统密码确认更改。</p>
+<p>当你想拔出已经挂载的NTFS驱动器时，请先在Mounty for NTFS中卸载你的驱动器，然后再使用Finder的“推出”功能。</p>
+
+        <h2 id="常见问题"   >
+          <a href="#常见问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2>
+      <p>Q1：使用一段时间后，曾经可以成功被挂载的分区现在无法挂载了？<br>A1：根据官网上的解释，是因为上次使用完此分区后，并没有正常“弹出”，请将此分区在Mac或Windows上正常地“弹出”一次即可。</p>
+<p>Q2：上述分区是硬盘上的，不是可移动磁盘分区，怎么弹出？<br>A2：启动到MacOS，打开Finder，在左侧的磁盘列表中使用鼠标右键点击对应分区，选择“推出”，重启MacOS即可。</p>
+<p>Q3：按上述步骤做了之后，还是没有用？<br>A3：可能是你的NTFS磁盘有错误，需要使用chkdsk命令修复。请在Windows操作系统下，以“管理员身份”打开CMD，输入chkdsk 「磁盘盘符」: /f<br>例如我需要修复我的D盘，则上述命令为chkdsk d: /f<br>如果出现“是否卸除该卷”的提示，请按下Y，CMD会进行错误检查并自动修复。<br>如果依旧无法挂载，请重复A2的步骤。</p>
+<p>Q4：Windows+Mac双系统，可以挂载Windows所在分区进行读写吗？<br>A4：可以，但不建议这么做。</p>
+<p>Q5：在Mac上挂载NTFS分区读写，这是否会对我的NTFS磁盘造成伤害？<br>A5：严格来说，无论是在什么操作系统上对NTFS磁盘进行写入操作都会对其有伤害，所以请不要问这种问题。如果出现数据丢失，请尝试A3的操作步骤。</p>
+
+        <h2 id="软件下载链接"   >
+          <a href="#软件下载链接" class="heading-link"><i class="fas fa-link"></i></a><a href="#软件下载链接" class="headerlink" title="软件下载链接"></a>软件下载链接</h2>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mounty.app/" >https://mounty.app</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>请使用带有翻译插件的浏览器访问（如Chrome），因为网站暂时没有中文页面。</p>
+
+        <h3 id="欢迎各位在评论区留下你的使用体验！"   >
+          <a href="#欢迎各位在评论区留下你的使用体验！" class="heading-link"><i class="fas fa-link"></i></a><a href="#欢迎各位在评论区留下你的使用体验！" class="headerlink" title="欢迎各位在评论区留下你的使用体验！"></a>欢迎各位在评论区留下你的使用体验！</h3>
+      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://otkteen.top">化学纤维</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://otkteen.top/2019/Mounty%20NTFS/">http://otkteen.top/2019/Mounty%20NTFS/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/Mac/">Mac</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E6%95%99%E7%A8%8B/">教程</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/">软件分享</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2019/nasty-makeding/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">我对思杰马克丁的看法</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2019/skip-UAC/"><span class="paginator-prev__text">绕行UAC方法 1</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac%E8%AE%BE%E5%A4%87%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFNTFS%E8%AF%BB%E5%86%99%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">
+          Mac设备如何开启NTFS读写？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%BE%E9%81%93%E6%88%91%E4%BB%AC%E7%A9%B7%E4%BA%BA%E5%B0%B1%E6%B2%A1%E6%9C%89%E4%BA%BA%E6%9D%83%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">
+          难道我们穷人就没有人权？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mounty-for-NTFS"><span class="toc-number">2.</span> <span class="toc-text">
+          Mounty for NTFS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mounty-for-NTFS%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">
+          如何使用Mounty for NTFS？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">
+          注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">
+          常见问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">
+          软件下载链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A2%E8%BF%8E%E5%90%84%E4%BD%8D%E5%9C%A8%E8%AF%84%E8%AE%BA%E5%8C%BA%E7%95%99%E4%B8%8B%E4%BD%A0%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C%EF%BC%81"><span class="toc-number">6.1.</span> <span class="toc-text">
+          欢迎各位在评论区留下你的使用体验！</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://s2.ax1x.com/2019/09/29/uGAzZ9.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">一名喜欢折腾系统和网站的学生</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://www.youtube.com/channel/UC4zXlY0-5zVHYsRBBgE_woQ" target="_blank" rel="noopener" data-popover="Youtube" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-youtube"></i></span></a><a class="sidebar-ov-social-item" href="https://weibo.com/chemicalfiber" target="_blank" rel="noopener" data-popover="微博" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weibo"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=2461962169" target="_blank" rel="noopener" data-popover="social.QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="mailto:chengfawu6@outlook.com" target="_blank" rel="noopener" data-popover="social.Email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2019~2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>化学纤维</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script>function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: '1khGNJVhFgICknbrNrlKcTVQ-gzGzoHsz',
+    appKey: 'A5zsJpwszT21incfDuEhFi4G',
+    notify: true,
+    verify: true,
+    placeholder: '来水个回复吧～',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: false,
+    recordIP: false,
+    lang: '' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (false) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
