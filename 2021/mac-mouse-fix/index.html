@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="MOS更新之后（准确来说是3.1.0从prerelease变成正式release之后），平滑滚动的手感发生了很大的变化，变得难用了……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac Mouse Fix-比MOS更好的Mac鼠标滚动平滑工具">
+<meta property="og:url" content="http://otkteen.top/2021/mac-mouse-fix/index.html">
+<meta property="og:site_name" content="化学纤维&#39;s blog">
+<meta property="og:description" content="MOS更新之后（准确来说是3.1.0从prerelease变成正式release之后），平滑滚动的手感发生了很大的变化，变得难用了……">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z3.ax1x.com/2021/04/05/cQenUK.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/04/05/cQeFgJ.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/04/05/cQei34.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/04/05/cQekv9.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/04/05/cQePCF.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/04/05/cQeEuR.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/04/05/cQe94U.png">
+<meta property="article:published_time" content="2021-04-05T07:10:58.000Z">
+<meta property="article:modified_time" content="2021-04-10T02:19:56.625Z">
+<meta property="article:author" content="化学纤维">
+<meta property="article:tag" content="Mac">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="软件分享">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/04/05/cQenUK.png"><title>Mac Mouse Fix-比MOS更好的Mac鼠标滚动平滑工具 | 化学纤维's blog</title><link ref="canonical" href="http://otkteen.top/2021/mac-mouse-fix/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-menu-item__text">关于</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/about/"><span class="header-nav-submenu-item__icon"><i class="fas fa-user-circle"></i></span><span class="header-nav-submenu-item__text">关于我</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/log/"><span class="header-nav-submenu-item__icon"><i class="fas fa-book"></i></span><span class="header-nav-submenu-item__text">小站日志</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/music/"><span class="header-nav-submenu-item__icon"><i class="fas fa-music"></i></span><span class="header-nav-submenu-item__text">当季心情</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/friends/"><span class="header-nav-menu-item__icon"><i class="fas fa-address-book"></i></span><span class="header-nav-menu-item__text">友情链接</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner" style="background: url(https://z3.ax1x.com/2021/04/06/c1Ly28.jpg) no-repeat center/cover;"><div class="header-banner-info"><div class="header-banner-info__title">化学纤维's blog</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Mac Mouse Fix-比MOS更好的Mac鼠标滚动平滑工具</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-04-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-04-10</span></span></div></header><div class="post-body"><p>MOS更新之后（准确来说是3.1.0从prerelease变成正式release之后），平滑滚动的手感发生了很大的变化，变得难用了……</p>
+<span id="more"></span>
+<p>虽然我看了一下MOS的<a href="/2020/mos-software/#%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AE">滚动曲线</a>和以前版本的没有多大差别，但是就是感觉怪怪的……</p>
+
+        <h2 id="既然不好用了，就得寻找替代品啊！"   >
+          <a href="#既然不好用了，就得寻找替代品啊！" class="heading-link"><i class="fas fa-link"></i></a><a href="#既然不好用了，就得寻找替代品啊！" class="headerlink" title="既然不好用了，就得寻找替代品啊！"></a>既然不好用了，就得寻找替代品啊！</h2>
+      <p>我就在互联网上滚啊滚……尝试了其他几个同类付费软件之后，目光终于锁定在免费的<font color=orange>Mac Mouse Fix</font>上。<del><code>我老白嫖怪了</code></del><br><img src="https://z3.ax1x.com/2021/04/05/cQenUK.png" alt="软件图标" border="0" /></p>
+
+        <h2 id="比MOS好的地方！"   >
+          <a href="#比MOS好的地方！" class="heading-link"><i class="fas fa-link"></i></a><a href="#比MOS好的地方！" class="headerlink" title="比MOS好的地方！"></a>比MOS好的地方！</h2>
+      <p>Mac Mouse Fix比MOS好的地方是，它对黑苹果触摸板的支持，它能识别出你的指针设备是触摸板还是鼠标，而不像MOS那样统统视作鼠标处理。（MOS的作者明确表示目前MOS采用的算法无法解决这个问题，<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/Caldis/Mos/issues/247" >参考issues</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>）<br>如果在MOS中启用了“平滑”功能，你的黑苹果的触摸板方向会和自然触摸板方向相反，并且非常滑，滑得非常过头的那种滑……</p>
+<p>我的触摸板在Windows下是PS/2触摸板，在Mac下也是被视作PS/2鼠标（？），但是可以在设置下找到触摸板的设置？<br>但！是！Mac Mouse Fix的设置并不会影响黑苹果的触摸板。</p>
+
+        <h2 id="下载安装"   >
+          <a href="#下载安装" class="heading-link"><i class="fas fa-link"></i></a><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2>
+      <p>说了那么多，那么去哪里下载Mac Mouse Fix呢？<br>前往<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mousefix.org/" >软件官网</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>或<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/noah-nuebling/mac-mouse-fix" >开源项目地址release页面</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>下载Mac Mouse Fix，下载下来是一个小小的zip压缩包（才1.7MB？）。解压它，得到Mac Mouse Fix的.app文件（3.1MB）。<br>将解压出来的<code>Mac Mouse Fix.app</code>文件复制到你的<code>/Applications</code>（应用程序）文件夹下，完成安装。</p>
+
+        <h2 id="偏好设置"   >
+          <a href="#偏好设置" class="heading-link"><i class="fas fa-link"></i></a><a href="#偏好设置" class="headerlink" title="偏好设置"></a>偏好设置</h2>
+      <p>虽然这个软件是全英文的，但也不至于完全看不懂每一个选项的意思。</p>
+<p>首先映入眼帘的是设置窗口左上角的复选框“Enable Mac Mouse Fix”（启用Mac Mouse Fix），点击它，启用Mac Mouse Fix，这时，你可能要在「系统设置–&gt;安全和隐私–&gt;隐私–&gt;辅助使用」下授权Mac Mouse Fix。<br><img src="https://z3.ax1x.com/2021/04/05/cQeFgJ.png" alt="初始样貌" border="0" /></p>
+
+        <h3 id="和滚轮有关的调整"   >
+          <a href="#和滚轮有关的调整" class="heading-link"><i class="fas fa-link"></i></a><a href="#和滚轮有关的调整" class="headerlink" title="和滚轮有关的调整"></a>和滚轮有关的调整</h3>
+      <p>然后我们先来看一下底部和滚轮有关的设置Smooth scrolling（平滑滚动）、Scrolling speed（滚动速度）和Invert direction（反转方向）：<br>首先将Smooth Scrolling勾选，如果你想获得最贴近Windows的滚动手感，我推荐你将Scrolling speed（滚动速度）调到最大。<br><img src="https://z3.ax1x.com/2021/04/05/cQei34.png" alt="和滚轮有关的调整" border="0" /></p>
+
+        <h3 id="和鼠标中键有关的调整"   >
+          <a href="#和鼠标中键有关的调整" class="heading-link"><i class="fas fa-link"></i></a><a href="#和鼠标中键有关的调整" class="headerlink" title="和鼠标中键有关的调整"></a>和鼠标中键有关的调整</h3>
+      <p>接下来是和鼠标中键有关的调整选项：<br>Middle button（中键）有两个选项：Click（点按）和Hold（按住）。</p>
+<p>其中，Middle button（中键）的Click（点按）设置如下：</p>
+<ul>
+<li>Middle button click<code>中键点击</code></li>
+<li>Mission control<code>调度中心</code></li>
+<li>App Expoxé<code>显示当前应用所有窗口</code></li>
+<li>Show Desktop<code>显示桌面</code></li>
+<li>Launchpad<code>显示启动台</code></li>
+<li>Lookup<code>查询资料（相当于触摸板三指点按）</code></li>
+</ul>
+<p>Hold（按住）的设置也大同小异。<br><img src="https://z3.ax1x.com/2021/04/05/cQekv9.png" alt="和鼠标中键有关的调整" border="0" /></p>
+
+        <h3 id="和鼠标侧键有关的调整"   >
+          <a href="#和鼠标侧键有关的调整" class="heading-link"><i class="fas fa-link"></i></a><a href="#和鼠标侧键有关的调整" class="headerlink" title="和鼠标侧键有关的调整"></a>和鼠标侧键有关的调整</h3>
+      <p>Side button（侧键）有两个选项：Click（点按）和Swap side button（交换两个侧键的功能）。</p>
+<p>Click（点按）有以下选项：</p>
+<ul>
+<li>Side button click<code>原始的侧键点击（似乎没啥用）</code></li>
+<li>Move between Spaces<code>在虚拟桌面之间切换</code></li>
+<li>Back and Foward<code>前进和后退</code><img src="https://z3.ax1x.com/2021/04/05/cQePCF.png" alt="和鼠标侧键有关的调整" border="0" /></li>
+</ul>
+
+        <h2 id="高级设置"   >
+          <a href="#高级设置" class="heading-link"><i class="fas fa-link"></i></a><a href="#高级设置" class="headerlink" title="高级设置"></a>高级设置</h2>
+      <p>点击右上角的More…（更多…）进入软件的高级设置，在这里，你可以设置是否自动检查更新、要排除哪些应用、访问软件官网和项目地址，以及…通过PayPal请作者喝一杯奶昔XD。<br><img src="https://z3.ax1x.com/2021/04/05/cQeEuR.png" alt="高级设置" border="0" /></p>
+<p>点击App-specific settings…（特定应用程序设置）进入排除应用名单。<br>点击左下角的「+」添加一个要排除在外的应用，我推荐排除需要滚轮进行缩放的应用，例如PS、AE、PowerPoint等。<br>右侧的三个勾分别是Smooth scrolling（平滑滚动）、⌘-scroll to zoom（按住command时滚动缩放）、⇧-horizontal scroll（按住shift时水平滚动），根据你的时机情况来设置。<br>当你想移除某个应用程序时，只需要点击它的名字，然后点左下角的「-」即可移除。<br>完成设置之后，点击右下角的OK离开设置。<br><img src="https://z3.ax1x.com/2021/04/05/cQe94U.png" alt="特定应用程序设置" border="0" /></p>
+
+        <h2 id="强迫症解决方案（bushi）"   >
+          <a href="#强迫症解决方案（bushi）" class="heading-link"><i class="fas fa-link"></i></a><a href="#强迫症解决方案（bushi）" class="headerlink" title="强迫症解决方案（bushi）"></a>强迫症解决方案（bushi）</h2>
+      <p>Mac Mouse Fix并不会像某些国产流氓那样，给你推送「传骑爸耶」和「酒阴针茎」之类的小广告和垃圾软件，也不需要你手动隐藏顶部通知栏图标。<br>如果你正常地设置它之后，按下「⌘Q」退出Mac Mouse Fix，你就能体验到和Windows上鼠标差不多的平滑体验了，你甚至感觉不到Mac Mouse Fix的存在。</p>
+
+        <h3 id="这个时候，在网页上滚动一下鼠标试试看？是不是和Windows-10一样的手感了呢？"   >
+          <a href="#这个时候，在网页上滚动一下鼠标试试看？是不是和Windows-10一样的手感了呢？" class="heading-link"><i class="fas fa-link"></i></a><a href="#这个时候，在网页上滚动一下鼠标试试看？是不是和Windows-10一样的手感了呢？" class="headerlink" title="这个时候，在网页上滚动一下鼠标试试看？是不是和Windows 10一样的手感了呢？"></a>这个时候，在网页上滚动一下鼠标试试看？是不是和Windows 10一样的手感了呢？</h3>
+      
+        <h2 id="相关链接"   >
+          <a href="#相关链接" class="heading-link"><i class="fas fa-link"></i></a><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2>
+      <p>软件官网：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mousefix.org/" >https://mousefix.org/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>开源项目地址：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/noah-nuebling/mac-mouse-fix" >https://github.com/noah-nuebling/mac-mouse-fix</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>A站使用体验视频地址：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.acfun.cn/v/ac27608309" >https://www.acfun.cn/v/ac27608309</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>B站使用体验视频地址：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/av205122544" >https://www.bilibili.com/video/av205122544</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>YouTube使用体验视频地址：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://youtu.be/Xj3Wq1Y2Ez0" >https://youtu.be/Xj3Wq1Y2Ez0</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://otkteen.top">化学纤维</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://otkteen.top/2021/mac-mouse-fix/">http://otkteen.top/2021/mac-mouse-fix/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/Mac/">Mac</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/">软件分享</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://otkteen.top/tags/%E6%95%99%E7%A8%8B/">教程</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2020/mos-software/"><span class="paginator-prev__text">MOS-一款Mac上的鼠标使用体验优化软件</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A2%E7%84%B6%E4%B8%8D%E5%A5%BD%E7%94%A8%E4%BA%86%EF%BC%8C%E5%B0%B1%E5%BE%97%E5%AF%BB%E6%89%BE%E6%9B%BF%E4%BB%A3%E5%93%81%E5%95%8A%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">
+          既然不好用了，就得寻找替代品啊！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94MOS%E5%A5%BD%E7%9A%84%E5%9C%B0%E6%96%B9%EF%BC%81"><span class="toc-number">2.</span> <span class="toc-text">
+          比MOS好的地方！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">
+          下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">
+          偏好设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8C%E6%BB%9A%E8%BD%AE%E6%9C%89%E5%85%B3%E7%9A%84%E8%B0%83%E6%95%B4"><span class="toc-number">4.1.</span> <span class="toc-text">
+          和滚轮有关的调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8C%E9%BC%A0%E6%A0%87%E4%B8%AD%E9%94%AE%E6%9C%89%E5%85%B3%E7%9A%84%E8%B0%83%E6%95%B4"><span class="toc-number">4.2.</span> <span class="toc-text">
+          和鼠标中键有关的调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8C%E9%BC%A0%E6%A0%87%E4%BE%A7%E9%94%AE%E6%9C%89%E5%85%B3%E7%9A%84%E8%B0%83%E6%95%B4"><span class="toc-number">4.3.</span> <span class="toc-text">
+          和鼠标侧键有关的调整</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">
+          高级设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%BA%E8%BF%AB%E7%97%87%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88bushi%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">
+          强迫症解决方案（bushi）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%99%E4%B8%AA%E6%97%B6%E5%80%99%EF%BC%8C%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%8A%E6%BB%9A%E5%8A%A8%E4%B8%80%E4%B8%8B%E9%BC%A0%E6%A0%87%E8%AF%95%E8%AF%95%E7%9C%8B%EF%BC%9F%E6%98%AF%E4%B8%8D%E6%98%AF%E5%92%8CWindows-10%E4%B8%80%E6%A0%B7%E7%9A%84%E6%89%8B%E6%84%9F%E4%BA%86%E5%91%A2%EF%BC%9F"><span class="toc-number">6.1.</span> <span class="toc-text">
+          这个时候，在网页上滚动一下鼠标试试看？是不是和Windows 10一样的手感了呢？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="toc-number">7.</span> <span class="toc-text">
+          相关链接</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://s2.ax1x.com/2019/09/29/uGAzZ9.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">一名喜欢折腾系统和网站的学生</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://www.youtube.com/channel/UC4zXlY0-5zVHYsRBBgE_woQ" target="_blank" rel="noopener" data-popover="Youtube" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-youtube"></i></span></a><a class="sidebar-ov-social-item" href="https://weibo.com/chemicalfiber" target="_blank" rel="noopener" data-popover="微博" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weibo"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=2461962169" target="_blank" rel="noopener" data-popover="social.QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="mailto:chengfawu6@outlook.com" target="_blank" rel="noopener" data-popover="social.Email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">25</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2019~2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>化学纤维</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script>function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: '1khGNJVhFgICknbrNrlKcTVQ-gzGzoHsz',
+    appKey: 'A5zsJpwszT21incfDuEhFi4G',
+    notify: true,
+    verify: true,
+    placeholder: '来水个回复吧～',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: false,
+    recordIP: false,
+    lang: '' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (false) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
